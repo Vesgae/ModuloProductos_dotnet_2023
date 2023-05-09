@@ -43,7 +43,7 @@ namespace Modulo_Productos.Controllers
                 {
                     var nuevoRepuestoEnVenta = new RepuestoEnVenta();
                     var modelo = _listModelo.Find(y => y.Id == repuesto.ModeloId);
-                    var marca = _listMarca.Find(x => x.Id == modelo.MarcaId);
+                    var marca_db = _listMarca.Find(x => x.Id == modelo.MarcaId);
                     var foto = _listFotoProducto.Find(x => x.ProductoId == producto.Id);
                     var disponibilidad = _listDisponibilidad.Find(y => y.RepuestoId == repuesto.Id);
 
@@ -58,7 +58,7 @@ namespace Modulo_Productos.Controllers
                     nuevoRepuestoEnVenta.nombreProducto = producto.Nombre;
                     nuevoRepuestoEnVenta.unidadesDisponibles = (int?)disponibilidad.UnidadesDisponibles;
                     nuevoRepuestoEnVenta.idSucursal = (int?)disponibilidad.IdSucursal;
-                    nuevoRepuestoEnVenta.marca = marca.Nombre;
+                    nuevoRepuestoEnVenta.marca = marca_db.Nombre;
                     nuevoRepuestoEnVenta.modelo = modelo.Nombre;
                     nuevoRepuestoEnVenta.urlFotografia = foto.Url;
                     listaRepuestos.Add(nuevoRepuestoEnVenta);
