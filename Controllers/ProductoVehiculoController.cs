@@ -165,7 +165,7 @@ namespace Modulo_Productos.Controllers
             nuevoProducto.Nombre = nuevoVehiculo.modelo;
             nuevoProducto = _context.Productos.Add(nuevoProducto).Entity;
             _context.SaveChanges();
-            var vehiculoAgregar = new Vehiculo();
+            var vehiculoAgregar = new Vehiculo();   
             var fotografia = new FotoProducto();
             fotografia.ProductoId = nuevoProducto.Id;
             fotografia.Url = nuevoVehiculo.urlFotografia ?? "";
