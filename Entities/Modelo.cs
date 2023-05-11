@@ -11,9 +11,4 @@ public partial class Modelo
 
     public long MarcaId { get; set; }
 
-    public virtual Marca Marca { get; set; } = null!;
-
-    public virtual ICollection<Repuesto> Repuestos { get; set; } = new List<Repuesto>();
-
-    public virtual ICollection<Vehiculo> Vehiculos { get; set; } = new List<Vehiculo>();
 }

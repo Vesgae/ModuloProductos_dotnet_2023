@@ -85,16 +85,6 @@ public partial class ProductosServiciosVehiculosContext : DbContext
             entity.Property(e => e.VehiculoId)
                 .HasColumnType("bigint(20)")
                 .HasColumnName("vehiculo_id");
-
-            entity.HasOne(d => d.Alerta).WithMany(p => p.Alertasxvehiculos)
-                .HasForeignKey(d => d.AlertaId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FKkd4bq1lu40blp74s9x7254ao");
-
-            entity.HasOne(d => d.Vehiculo).WithMany(p => p.Alertasxvehiculos)
-                .HasForeignKey(d => d.VehiculoId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FKktfdtahce7ralvc2lm5mfja9f");
         });
 
         modelBuilder.Entity<Alertum>(entity =>
@@ -143,11 +133,6 @@ public partial class ProductosServiciosVehiculosContext : DbContext
             entity.Property(e => e.ServicioAgendadoId)
                 .HasColumnType("bigint(20)")
                 .HasColumnName("servicio_agendado_id");
-
-            entity.HasOne(d => d.ServicioAgendado).WithMany(p => p.Cita)
-                .HasForeignKey(d => d.ServicioAgendadoId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FKh2ogq2kau7i0rrf1styghj3bm");
         });
 
         modelBuilder.Entity<DisponibilidadRecurso>(entity =>
@@ -173,11 +158,6 @@ public partial class ProductosServiciosVehiculosContext : DbContext
             entity.Property(e => e.UnidadesDisponibles)
                 .HasColumnType("bigint(20)")
                 .HasColumnName("unidades_disponibles");
-
-            entity.HasOne(d => d.Recurso).WithMany(p => p.DisponibilidadRecursos)
-                .HasForeignKey(d => d.RecursoId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK93mqaodjg54f02fbjrj3cme82");
         });
 
         modelBuilder.Entity<DisponibilidadRepuesto>(entity =>
@@ -203,11 +183,6 @@ public partial class ProductosServiciosVehiculosContext : DbContext
             entity.Property(e => e.UnidadesDisponibles)
                 .HasColumnType("bigint(20)")
                 .HasColumnName("unidades_disponibles");
-
-            entity.HasOne(d => d.Repuesto).WithMany(p => p.DisponibilidadRepuestos)
-                .HasForeignKey(d => d.RepuestoId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FKamvgmuma6xmbm00xuuskj9b0n");
         });
 
         modelBuilder.Entity<Fase>(entity =>
@@ -249,16 +224,6 @@ public partial class ProductosServiciosVehiculosContext : DbContext
             entity.Property(e => e.ServicioAgendadoId)
                 .HasColumnType("bigint(20)")
                 .HasColumnName("servicio_agendado_id");
-
-            entity.HasOne(d => d.Fase).WithMany(p => p.FasexservicioAgendados)
-                .HasForeignKey(d => d.FaseId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK1ok1dd74w9fdy4yc19isbgf66");
-
-            entity.HasOne(d => d.ServicioAgendado).WithMany(p => p.FasexservicioAgendados)
-                .HasForeignKey(d => d.ServicioAgendadoId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK801m0bnbmkycbei0wjo5va3ak");
         });
 
         modelBuilder.Entity<FotoProducto>(entity =>
@@ -281,11 +246,6 @@ public partial class ProductosServiciosVehiculosContext : DbContext
                 .HasColumnType("bigint(20)")
                 .HasColumnName("producto_id");
             entity.Property(e => e.Url).HasColumnName("url");
-
-            entity.HasOne(d => d.Producto).WithMany(p => p.FotoProductos)
-                .HasForeignKey(d => d.ProductoId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FKgb6w6nksgjemi73xouc5lt81j");
         });
 
         modelBuilder.Entity<FotoServicio>(entity =>
@@ -309,10 +269,6 @@ public partial class ProductosServiciosVehiculosContext : DbContext
                 .HasColumnName("servicio_id");
             entity.Property(e => e.Url).HasColumnName("url");
 
-            entity.HasOne(d => d.Servicio).WithMany(p => p.FotoServicios)
-                .HasForeignKey(d => d.ServicioId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FKn6q58n7qq56fiapialj62cmu6");
         });
 
         modelBuilder.Entity<Marca>(entity =>
@@ -353,10 +309,6 @@ public partial class ProductosServiciosVehiculosContext : DbContext
                 .HasColumnName("marca_id");
             entity.Property(e => e.Nombre).HasColumnName("nombre");
 
-            entity.HasOne(d => d.Marca).WithMany(p => p.Modelos)
-                .HasForeignKey(d => d.MarcaId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FKllxq2dldvhxvb5q9csar7vdfy");
         });
 
         modelBuilder.Entity<Producto>(entity =>
@@ -420,15 +372,6 @@ public partial class ProductosServiciosVehiculosContext : DbContext
                 .HasColumnType("bigint(20)")
                 .HasColumnName("producto_id");
 
-            entity.HasOne(d => d.Modelo).WithMany(p => p.Repuestos)
-                .HasForeignKey(d => d.ModeloId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK3kyiar2mpp7jy406yu0uvn2bt");
-
-            entity.HasOne(d => d.Producto).WithMany(p => p.Repuestos)
-                .HasForeignKey(d => d.ProductoId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FKljpeffeql3rfch712qqh81e5h");
         });
 
         modelBuilder.Entity<Servicio>(entity =>
@@ -455,11 +398,6 @@ public partial class ProductosServiciosVehiculosContext : DbContext
             entity.Property(e => e.TipoServicioId)
                 .HasColumnType("bigint(20)")
                 .HasColumnName("tipo_servicio_id");
-
-            entity.HasOne(d => d.TipoServicio).WithMany(p => p.Servicios)
-                .HasForeignKey(d => d.TipoServicioId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK5g48yc2sr5ecks0ay9leesuv2");
         });
 
         modelBuilder.Entity<ServicioAgendado>(entity =>
@@ -503,15 +441,6 @@ public partial class ProductosServiciosVehiculosContext : DbContext
                 .HasColumnType("bigint(20)")
                 .HasColumnName("vehiculo_id");
 
-            entity.HasOne(d => d.Servicio).WithMany(p => p.ServicioAgendados)
-                .HasForeignKey(d => d.ServicioId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FKieodmxf1b3xpe62txkjmta4x6");
-
-            entity.HasOne(d => d.Vehiculo).WithMany(p => p.ServicioAgendados)
-                .HasForeignKey(d => d.VehiculoId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK6x9yajd8pwndwwvvrqesidtdf");
         });
 
         modelBuilder.Entity<Servicioxrecurso>(entity =>
@@ -536,16 +465,6 @@ public partial class ProductosServiciosVehiculosContext : DbContext
             entity.Property(e => e.ServicioId)
                 .HasColumnType("bigint(20)")
                 .HasColumnName("servicio_id");
-
-            entity.HasOne(d => d.Recurso).WithMany(p => p.Servicioxrecursos)
-                .HasForeignKey(d => d.RecursoId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FKkt77troo7mawoih777kb1hxa0");
-
-            entity.HasOne(d => d.Servicio).WithMany(p => p.Servicioxrecursos)
-                .HasForeignKey(d => d.ServicioId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK1wwly36epn9arkxqnybibg3tj");
         });
 
         modelBuilder.Entity<TipoCombustible>(entity =>
@@ -644,25 +563,6 @@ public partial class ProductosServiciosVehiculosContext : DbContext
             entity.Property(e => e.TipoVehiculoId)
                 .HasColumnType("bigint(20)")
                 .HasColumnName("tipo_vehiculo_id");
-
-            entity.HasOne(d => d.Modelo).WithMany(p => p.Vehiculos)
-                .HasForeignKey(d => d.ModeloId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FKp9hj7g6ceqe80ix17a435q7o0");
-
-            entity.HasOne(d => d.Producto).WithMany(p => p.Vehiculos)
-                .HasForeignKey(d => d.ProductoId)
-                .HasConstraintName("FK6jqq6mfmnuh1fnp3lety5g8vm");
-
-            entity.HasOne(d => d.TipoCombustible).WithMany(p => p.Vehiculos)
-                .HasForeignKey(d => d.TipoCombustibleId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK62jypc6mcsncvbxr1ypyf106n");
-
-            entity.HasOne(d => d.TipoVehiculo).WithMany(p => p.Vehiculos)
-                .HasForeignKey(d => d.TipoVehiculoId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK8si429jg12xpnu65gsn2a1r44");
         });
 
         OnModelCreatingPartial(modelBuilder);

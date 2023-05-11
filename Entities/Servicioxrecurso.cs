@@ -11,7 +11,4 @@ public partial class Servicioxrecurso
 
     public long ServicioId { get; set; }
 
-    public virtual Recurso Recurso { get; set; } = null!;
-
-    public virtual Servicio Servicio { get; set; } = null!;
 }

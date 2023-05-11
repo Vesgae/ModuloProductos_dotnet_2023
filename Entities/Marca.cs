@@ -9,5 +9,4 @@ public partial class Marca
 
     public string Nombre { get; set; } = null!;
 
-    public virtual ICollection<Modelo> Modelos { get; set; } = new List<Modelo>();
 }

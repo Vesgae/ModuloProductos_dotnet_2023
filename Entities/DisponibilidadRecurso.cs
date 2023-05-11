@@ -13,5 +13,4 @@ public partial class DisponibilidadRecurso
 
     public long RecursoId { get; set; }
 
-    public virtual Recurso Recurso { get; set; } = null!;
 }

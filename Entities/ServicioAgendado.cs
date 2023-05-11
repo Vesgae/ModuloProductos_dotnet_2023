@@ -23,11 +23,4 @@ public partial class ServicioAgendado
 
     public long VehiculoId { get; set; }
 
-    public virtual ICollection<Citum> Cita { get; set; } = new List<Citum>();
-
-    public virtual ICollection<FasexservicioAgendado> FasexservicioAgendados { get; set; } = new List<FasexservicioAgendado>();
-
-    public virtual Servicio Servicio { get; set; } = null!;
-
-    public virtual Vehiculo Vehiculo { get; set; } = null!;
 }

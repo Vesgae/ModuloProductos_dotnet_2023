@@ -9,5 +9,4 @@ public partial class TipoCombustible
 
     public string Nombre { get; set; } = null!;
 
-    public virtual ICollection<Vehiculo> Vehiculos { get; set; } = new List<Vehiculo>();
 }

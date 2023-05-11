@@ -9,5 +9,4 @@ public partial class TipoServicio
 
     public string Nombre { get; set; } = null!;
 
-    public virtual ICollection<Servicio> Servicios { get; set; } = new List<Servicio>();
 }

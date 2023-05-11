@@ -11,5 +11,5 @@ public partial class FotoServicio
 
     public long ServicioId { get; set; }
 
-    public virtual Servicio Servicio { get; set; } = null!;
+
 }

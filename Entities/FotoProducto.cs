@@ -11,5 +11,4 @@ public partial class FotoProducto
 
     public long ProductoId { get; set; }
 
-    public virtual Producto Producto { get; set; } = null!;
 }

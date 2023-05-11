@@ -15,5 +15,4 @@ public partial class Alertum
 
     public string Nombre { get; set; } = null!;
 
-    public virtual ICollection<Alertasxvehiculo> Alertasxvehiculos { get; set; } = new List<Alertasxvehiculo>();
 }

@@ -12,6 +12,4 @@ public partial class DisponibilidadRepuesto
     public long UnidadesDisponibles { get; set; }
 
     public long RepuestoId { get; set; }
-
-    public virtual Repuesto Repuesto { get; set; } = null!;
 }

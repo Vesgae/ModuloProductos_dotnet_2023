@@ -15,9 +15,4 @@ public partial class Repuesto
 
     public long ProductoId { get; set; }
 
-    public virtual ICollection<DisponibilidadRepuesto> DisponibilidadRepuestos { get; set; } = new List<DisponibilidadRepuesto>();
-
-    public virtual Modelo Modelo { get; set; } = null!;
-
-    public virtual Producto Producto { get; set; } = null!;
 }

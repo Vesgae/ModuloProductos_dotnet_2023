@@ -123,7 +123,7 @@ namespace Modulo_Productos.Controllers
             _context.SaveChanges();
             var fotografia = new FotoProducto();
             fotografia.ProductoId = producto.Id;
-            fotografia.Url = nuevoRepuesto.urlFotografia?? "jajajaja";
+            fotografia.Url = nuevoRepuesto.urlFotografia;
             fotografia = _context.FotoProductos.Add(fotografia).Entity;
             _context.SaveChanges();
             var repuesto = new Repuesto();

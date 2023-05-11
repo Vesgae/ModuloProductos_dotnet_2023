@@ -165,7 +165,7 @@ namespace Modulo_Productos.Controllers
             nuevoProducto.Nombre = nuevoVehiculo.modelo;
             nuevoProducto = _context.Productos.Add(nuevoProducto).Entity;
             _context.SaveChanges();
-            var vehiculoAgregar = new Vehiculo();   
+            var vehiculoAgregar = new Vehiculo();
             var fotografia = new FotoProducto();
             fotografia.ProductoId = nuevoProducto.Id;
             fotografia.Url = nuevoVehiculo.urlFotografia ?? "";
@@ -229,7 +229,8 @@ namespace Modulo_Productos.Controllers
                         _context.FotoProductos.Remove(fotografia);
                         _context.SaveChanges();
                     }
-                    _context.Vehiculos.Remove(vehiculo);
+                    vehiculo.ProductoId = null;
+                    _context.Entry(vehiculo).State = EntityState.Modified;
                     _context.SaveChanges();
                     _context.Productos.Remove(producto);
                     _context.SaveChanges();

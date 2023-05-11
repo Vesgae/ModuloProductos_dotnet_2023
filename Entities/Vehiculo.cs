@@ -24,16 +24,4 @@ public partial class Vehiculo
     public long TipoCombustibleId { get; set; }
 
     public long TipoVehiculoId { get; set; }
-
-    public virtual ICollection<Alertasxvehiculo> Alertasxvehiculos { get; set; } = new List<Alertasxvehiculo>();
-
-    public virtual Modelo Modelo { get; set; } = null!;
-
-    public virtual Producto? Producto { get; set; }
-
-    public virtual ICollection<ServicioAgendado> ServicioAgendados { get; set; } = new List<ServicioAgendado>();
-
-    public virtual TipoCombustible TipoCombustible { get; set; } = null!;
-
-    public virtual TipoVehiculo TipoVehiculo { get; set; } = null!;
 }

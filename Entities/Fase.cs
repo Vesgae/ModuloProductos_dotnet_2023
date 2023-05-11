@@ -9,5 +9,4 @@ public partial class Fase
 
     public string Nombre { get; set; } = null!;
 
-    public virtual ICollection<FasexservicioAgendado> FasexservicioAgendados { get; set; } = new List<FasexservicioAgendado>();
 }

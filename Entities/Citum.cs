@@ -11,5 +11,4 @@ public partial class Citum
 
     public long ServicioAgendadoId { get; set; }
 
-    public virtual ServicioAgendado ServicioAgendado { get; set; } = null!;
 }
